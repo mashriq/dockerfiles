@@ -8,7 +8,7 @@ boot2doker up
 
 # コンテナ作成と起動
 docker build -t yourname/nginxphp:0.1 .
-docker run -i -t -d -p 80:80 -p 3306:3306 -p 2023:22 yourname/nginxphp:0.1 /bin/bash
+docker run -i -t -d -p 8080:80 -p 3306:3306 -p 2023:22 yourname/nginxphp:0.1 /bin/bash
 
 # 初期作業
 docker attach `dl`
