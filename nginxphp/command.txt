@@ -19,5 +19,5 @@ docker attach `dl`
 exitするとコンテナが終了してしまう。
 
 # SSHログイン
-ssh -l admin -p 2023 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null localhost
+ssh -l nginx -p 2023 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null localhost
 
