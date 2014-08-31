@@ -1,0 +1,23 @@
+# Containerのポート開放
+VBoxManage modifyvm "boot2docker-vm" --natpf1 "container_ssh,tcp,127.0.0.1,2023,,2023"
+VBoxManage modifyvm "boot2docker-vm" --natpf1 "container_http,tcp,127.0.0.1,8080,,80"
+VBoxManage modifyvm "boot2docker-vm" --natpf1 "container_mysql,tcp,127.0.0.1,3306,,3306"
+
+# boot2docker 起動
+boot2doker up
+
+# コンテナ作成と起動
+docker build -t yourname/nginxphp:0.1 .
+docker run -i -t -d -p 80:80 -p 3306:3306 -p 2023:22 yourname/nginxphp:0.1 /bin/bash
+
+# 初期作業
+docker attach `dl`
+(Enter)
+./init.sh
+
+作業が終わって抜けるときは、Ctrl+P & Ctrl+Q
+exitするとコンテナが終了してしまう。
+
+# SSHログイン
+ssh -l admin -p 2023 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null localhost
+
