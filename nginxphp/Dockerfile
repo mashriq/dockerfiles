@@ -32,7 +32,7 @@ RUN echo 'nginx ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
 ADD nginx/.bash_profile /home/nginx/
 ADD nginx/.bashrc /home/nginx/
-RUN chown -R nginx:nginx /home/nginx/
+# RUN chown -R nginx:nginx /home/nginx/
 
 # アプリケーション
 
