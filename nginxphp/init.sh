@@ -36,7 +36,7 @@ mysqld started'
 # init mysql
 
 /usr/bin/mysqladmin -u root password 'initpass'
-echo 'mysql'/'s password is "initpass". you should change real password.'
+echo 'mysql'\''s password is "initpass". you should change real password.'
 
 echo '
 init ended'
